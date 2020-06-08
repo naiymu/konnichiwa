@@ -78,11 +78,11 @@ EOF;
 			$div = str_replace("bookmark bmk-no", "bookmark bmk-yes", $div);
 		}
 		echo $div;
-		// Close the row-flex div
-		echo "</div>";
-		// Close the main div
-		echo "</div>";
 	}
+	// Close the row-flex div
+	echo "</div>";
+	// Close the main div
+	echo "</div>";
 }
 else {
 	echo "<div class='main'>";
