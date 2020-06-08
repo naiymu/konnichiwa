@@ -29,7 +29,7 @@ if(!$result) {
 $rows = $result->num_rows;
 
 if($rows > 0) {
-	echo "<div class='main'>";
+	echo "<div class='main column-flex'>";
 	echo "<div class='frame favourite-head-frame'>";
 	echo "<div class='container favourite-head-container'>";
 	echo "<p class='favourite-title'>Favourites</p>";
