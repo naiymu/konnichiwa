@@ -70,17 +70,16 @@ if(!$result) {
 
 $rows = $result->num_rows;
 
-echo "
-<div class='table-container'>
-<table>
-<tr>
-	<th>Directory</th>
-	<th>Page number</th>
-	<th>Actions</th>
-</tr>
-";
-
 if($rows > 0) {
+	echo "
+	<div class='table-container'>
+	<table>
+	<tr>
+		<th>Directory</th>
+		<th>Page number</th>
+		<th>Actions</th>
+	</tr>
+	";
 	while($row = $result->fetch_assoc()) {
 		$dirId = $row['dirId'];
 		$bookmark = $row['bookmark'];
@@ -139,17 +138,12 @@ if($rows > 0) {
 		</tr>";
 		echo $row;
 	}
+	echo "</table></div>";
 }
 else {
-	echo "<div class='frame' style='width: 500px;'>";
-	echo "<div class='container'>";
-	$error = getErrorString("No directory starting with '$letter'", 0);
+	$error = getErrorString("No bookmarks found", 0);
 	echo $error;
-	echo "</div>";
-	echo "</div>";
 }
-
-echo "</table></div>";
 
 // Close the frame and container div
 echo "</div></div>";

@@ -63,12 +63,8 @@ if($rows > 0) {
 	echo "<div id='bottom'></div>";
 }
 else {
-	echo "<div class='frame' style='width: 500px;'>";
-	echo "<div class='container'>";
 	$error = getErrorString("No authors found", 0);
 	echo $error;
-	echo "</div>";
-	echo "</div>";
 }
 
 echo "</div>";

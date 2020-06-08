@@ -20,13 +20,6 @@ if($connection->connect_errno) {
 $sql = "SELECT * FROM directories WHERE dirId IN (SELECT dirId FROM favourites) ORDER BY dirName ASC";
 $result = $connection->query($sql);
 
-echo "<div class='main'>";
-echo "<div class='frame favourite-head-frame'>";
-echo "<div class='container favourite-head-container'>";
-echo "<p class='favourite-title'>Favourites</p>";
-echo "</div>";
-echo "</div>";
-echo "<div class='row-flex'>";
 if(!$result) {
 	$error = getErrorString("Query unsuccessful", $connection->errno);
 	$connection->close();
@@ -36,6 +29,13 @@ if(!$result) {
 $rows = $result->num_rows;
 
 if($rows > 0) {
+	echo "<div class='main'>";
+	echo "<div class='frame favourite-head-frame'>";
+	echo "<div class='container favourite-head-container'>";
+	echo "<p class='favourite-title'>Favourites</p>";
+	echo "</div>";
+	echo "</div>";
+	echo "<div class='row-flex'>";
 	while($row = $result->fetch_assoc()) {
 		$dirId = $row['dirId'];
 		$dirName = $row['dirName'];
@@ -78,20 +78,22 @@ EOF;
 			$div = str_replace("bookmark bmk-no", "bookmark bmk-yes", $div);
 		}
 		echo $div;
+		// Close the row-flex div
+		echo "</div>";
+		// Close the main div
+		echo "</div>";
 	}
 }
 else {
+	echo "<div class='main'>";
 	echo "<div class='frame' style='width: 500px;'>";
 	echo "<div class='container'>";
-	$error = getErrorString("No directory starting with '$letter'", 0);
+	$error = getErrorString("No favourites found", 0);
 	echo $error;
 	echo "</div>";
 	echo "</div>";
+	echo "</div>";
 }
-// Close the row-flex div
-echo "</div>";
-// Close the main div
-echo "</div>";
 
 $result->close();
 $connection->close();

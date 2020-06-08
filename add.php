@@ -79,7 +79,6 @@ if($table !== null) {
 					// </div>
 					// ";
 					//----------------------------------------------------------
-					// This is default show a success message
 					echo "
 					<div class='main'>
 					<div class='frame'>
@@ -262,6 +261,10 @@ if($result->num_rows > 0) {
 		$tagsCheckboxes .= $string;
 	}
 }
+else {
+	$error = getErrorString("No tags found", 0);
+	$tagsCheckboxes = $error;
+}
 
 $result = $connection->query("SELECT * FROM authors ORDER BY author ASC");
 $letter = "";
@@ -287,6 +290,10 @@ if($result->num_rows > 0) {
 		</label><br>";
 		$authorsCheckboxes .= $string;
 	}
+}
+else {
+	$error = getErrorString("No authors found", 0);
+	$authorsCheckboxes = $error;
 }
 
 echo "

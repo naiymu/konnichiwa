@@ -154,7 +154,7 @@ EOF;
 	}
 }
 else {
-	echo "<div class='frame'>";
+	echo "<div class='frame wide'>";
 	echo "<div class='container'>";
 	$error = getErrorString("No new directories found", 0);
 	echo $error;
