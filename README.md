@@ -172,6 +172,7 @@ this option makes more sense.
 ## Fonts
 You need the following fonts installed on the system:
 * [Nikkyou Sans](https://www.fontspace.com/nikkyou-sans-font-f31053)
+(Used in the logo)
 * [Lato](http://www.latofonts.com/lato-free-fonts/)
 
 ## Recommendations

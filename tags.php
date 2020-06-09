@@ -44,9 +44,7 @@ $rows = $result->num_rows;
 if($rows > 0) {
 	echo "<form method='POST' action='bytag.php'>";
 	echo "<div class='tag-list'>";
-	$sectionLetter = 'A';
-	echo "<div class='tag-list-letter'>$sectionLetter</div>";
-	echo "<div class='bookmark-hanger tag-hanger'></div>";
+	$sectionLetter = '';
 	while($row = $result->fetch_assoc()) {
 		$tag = $row['tag'];
 		$tagName = ucwords($tag);
