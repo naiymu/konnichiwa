@@ -147,7 +147,7 @@ if($table !== null) {
 				<div class='underline active black'></div>
 				</div>
 				<img class='wide-image' src='/assets/bam.gif'>
-				<div class='sole-message'>
+				<div class='sole-message last'>
 				<p>Bam! Added \"$tag\" to tags</p>
 				</div>
 				<div class='underline active black'></div>
@@ -201,7 +201,7 @@ if($table !== null) {
 				<div class='underline active black'></div>
 				</div>
 				<img class='wide-image' src='/assets/bam.gif'>
-				<div class='sole-message'>
+				<div class='sole-message last'>
 				<p>Bam! Added \"$author\" to authors</p>
 				</div>
 				<div class='underline active black'></div>
