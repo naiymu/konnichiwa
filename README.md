@@ -22,8 +22,8 @@ This is good if you want to work for your degeneracy.
 </p>
 
 ## The Servers
-You need a local web server (tested with **Apache**) and **MySQL** server
-running on your **Linux** machine.<br>
+You need a local web server (tested with **Apache**) with PHP (with **mysqli**)
+enabled and **MySQL** server running on your **Linux** machine.<br>
 You can find many guides on the internet about setting those up if you're new
 to it.
 
@@ -37,6 +37,14 @@ You can find more information in
 if you want to manually setup the tables, or you may use
 [this](help/create.sql "help/create.sql") sql dump to do the
 same.
+
+To create tables from the sql dump, run the following commands in the mysql
+command line:
+```
+mysql> CREATE dbname;
+mysql> USE dbname;
+mysql> SOURCE /path/to/help/create.sql
+```
 
 ## External Requirements
 ### simple html dom
