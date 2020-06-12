@@ -25,10 +25,7 @@ if(!$html) {
 }
 
 /*================================== TITLE ===================================*/
-$title = htmlspecialchars(getTitle($html));
-$title = preg_replace('/[^A-Za-z0-9\- ]/', '', $title);
-// Replace extra spaces with single space
-$title = preg_replace('/\s+/', " ", $title);
+$title = getTitle($html);
 echo "<a class='doujin-title' href='" . $url . "'>" . $title . "</a>";
 /*============================================================================*/
 

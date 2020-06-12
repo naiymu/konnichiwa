@@ -25,13 +25,6 @@ if (!$dir_exists) {
 	die($error);
 }
 
-function cleanString($title) {
-	$title = preg_replace('/[^A-Za-z0-9\- ]/', '', $title);
-	// Replace extra spaces with single space
-	$title = preg_replace('/\s+/', " ", $title);
-	return $title;
-}
-
 function getName($fileName, $index, $extension) {
 	$imgName = "";
 	if($fileName !== "") {
@@ -61,7 +54,6 @@ if(!$html) {
 }
 
 $title = getTitle($html);
-$title = htmlspecialchars(cleanString($title));
 echo "<a class='doujin-title' href='" . $url . "'>" . $title . "</a>";
 
 $pages = getPages($html);
