@@ -25,7 +25,7 @@ function getArtists($html) {
 	// Find all artists and save them in an array
 	foreach ($links as $link) {
 		$href = $link->href;
-		if(strpos($href, "artist/") || strpos($href, "group/")) {
+		if(strpos($href, "/artist/")===0 || strpos($href, "/group/")===0) {
 			$artist = $link->find('span.name')[0]->innerText();
 			$artist = ucwords($artist);
 			$artists[] = trim($artist);
@@ -41,7 +41,7 @@ function getTags($html) {
 	// Find all artists and save them in an array
 	foreach ($links as $link) {
 		$href = $link->href;
-		if(strpos($href, "tag/")) {
+		if(strpos($href, "/tag/")===0) {
 			$tag = $link->find('span.name')[0]->innerText();
 			$tag = ucwords($tag);
 			$tags[] = trim($tag);
@@ -67,7 +67,7 @@ function getPages($html) {
 	$links = $html->find('a.tag');
 	foreach ($links as $link) {
 		$href = $link->href;
-		if(strpos($href, "pages")) {
+		if(strpos($href, "q=pages")) {
 			$pages = $link->find('span.name')[0]->innerText();
 			$pages = trim($pages);
 			break;
