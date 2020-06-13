@@ -2,6 +2,7 @@
 require_once("scripts/start.php");
 
 startPage("download", "download");
+$listBullet = "fa-chevron-circle-right";
 
 $htmlPage = <<<EOF
 <div class="main">
@@ -11,9 +12,15 @@ $htmlPage = <<<EOF
 				<p>Download</p>
 				<div class='underline active black'></div>
 			</div>
-			<form id="form">
+			<form id="form" class="column-flex">
 				<input class="textbox" type="text" name="id" placeholder="Enter ID" id="id"><br>
 				<input class="textbox" type="text" name="name" placeholder="Enter name (Optional)" id="name"><br>
+				<div class="single-checkbox">
+					<label for='grpauth'>
+						<input type='checkbox' id='grpauth' name='grpauth' value='include' checked>
+						<span>Include groups in authors</span>
+					</label>
+				</div>
 			</form>
 			<div class="buttons">
 				<button id="preview"><i class='fa fa-eye'></i>Preview</button><button id="download"><i class='fa fa-download'></i>Download</button>

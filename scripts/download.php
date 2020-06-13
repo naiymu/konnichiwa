@@ -7,6 +7,10 @@ require_once("directory.php");
 
 $id = "";
 $fileName = "";
+$includeGroups = false;
+if(isset($_POST['grpauth'])) {
+	$includeGroups = true;
+}
 $pages = 0;
 $mode = 0775;
 // Store the directory
@@ -60,7 +64,7 @@ $pages = getPages($html);
 echo "<p class='download-data'>(" . $pages . ")</p>";
 
 // Get artists and display them
-$artists = getArtists($html);
+$artists = getArtists($html, $includeGroups);
 echo "<div class='doujin-artists'>";
 foreach ($artists as $artist) {
 	echo "<p class='doujin-preview-artist'>" . $artist . "</p>";

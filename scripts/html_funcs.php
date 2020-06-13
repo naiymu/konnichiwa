@@ -18,14 +18,14 @@ function getTitle($html) {
 
 // The artist name contains the number of books associated with it
 // So we remove it as well
-function getArtists($html) {
+function getArtists($html, $includeGroups) {
 	// Get all the links (which also contain the artists name)
 	$links = $html->find('a.tag');
 	$artists = [];
 	// Find all artists and save them in an array
 	foreach ($links as $link) {
 		$href = $link->href;
-		if(strpos($href, "/artist/")===0 || strpos($href, "/group/")===0) {
+		if(strpos($href, "/artist/")===0 || ($includeGroups && strpos($href, "/group/")===0)) {
 			$artist = $link->find('span.name')[0]->innerText();
 			$artist = ucwords($artist);
 			$artists[] = trim($artist);

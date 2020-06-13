@@ -24,11 +24,16 @@ $(document).ready(function() {
 	$('#preview').click(function() {
 		$('#loading').show();
 		$('#output').html("");
+		$('#progress').html("");
 		var id = $('#id').val();
+		var data = {id: id};
+		if($('#grpauth').is(':checked')) {
+			data = {id: id, grpauth: "include"};
+		}
 		$.ajax({
 			url: "/scripts/preview.php",
 			type: "POST",
-			data: {id: id, name: name},
+			data: data,
 			success: function(php_output) {
 				$('#loading').hide();
 				$('#output').html(php_output);
@@ -44,10 +49,14 @@ $(document).ready(function() {
 		$('#output').html("");
 		var id = $('#id').val();
 		var name = $('#name').val();
+		var data = {id: id, name: name};
+		if($('#grpauth').is(':checked')) {
+			data = {id: id, name: name, grpauth: "include"};
+		}
 		$.ajax({
 			url: "/scripts/download.php",
 			type: "POST",
-			data: {id: id, name: name},
+			data: data,
 			cache: false,
 			success: function(php_output) {
 				$('#loading').hide();

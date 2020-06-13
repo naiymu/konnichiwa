@@ -1212,6 +1212,12 @@ tr:nth-child(even) {
 	font-size: 18px;
 	border: 2px solid black;
 }
+.single-checkbox {
+	position: relative;
+	text-align: left;
+	margin-top: 10px;
+	width: 70%;
+}
 @media screen and (max-width: 850px) {
 	h1 {
 	text-align: center;

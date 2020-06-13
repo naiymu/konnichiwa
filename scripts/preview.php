@@ -9,6 +9,10 @@ $baseUrl = "https://nhentai.net/g/";
 
 // Get the id from the user filled form
 $id = trim($_POST['id']);
+$includeGroups = false;
+if(isset($_POST['grpauth'])) {
+	$includeGroups = true;
+}
 if($id === "") {
 	$error = getErrorString("No ID provided.", 0);
 	die($error);
@@ -35,7 +39,7 @@ echo "<p class='doujin-pageno'>(" . $pages . ")</p>";
 /*============================================================================*/
 
 /*================================= ARTISTS ==================================*/
-$artists = getArtists($html);
+$artists = getArtists($html, $includeGroups);
 echo "<div class='doujin-artists'>";
 foreach ($artists as $artist) {
 	echo "<p class='doujin-preview-artist'>" . $artist . "</p>";
