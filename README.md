@@ -1,6 +1,6 @@
 <p align="center"><img width="100" src="assets/logo.png"></p>
 <h1 align="center">Konnichiwa</h1>
-<p align="center">A Manga and Doujinshi manager that runs on your local server</p>
+<p align="center">A Manga and Doujinshi manager that runs on your LAMP server</p>
 
 ## Description
 This is just a personal project since I wanted to learn some PHP and MySQL. And
@@ -95,7 +95,7 @@ its own nested subdirectory.
 From here on, the directory with all the subdirectories is referred to as
 **holy directory**. You **MUST** name this directory as `Doujinshi`.
 
-Now the put a symlink named `images` in the same directory as `index.php` which
+Now put a symlink named `images` in the same directory as `index.php` which
 links to the parent of the **holy directory**.<br>
 So, for instance, if the actual **holy directory** is
 `/home/user/Private/Doujinshi` then you put a symlink `images` which links to
