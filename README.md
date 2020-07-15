@@ -27,6 +27,11 @@ enabled and **MySQL** server running on your **Linux** machine.<br>
 You can find many guides on the internet about setting those up if you're new
 to it.
 
+**For the download tab** to work properly, you need to have php-fpm with fastcgi
+enabled. You can look up how to set it up if you want to use it (you should use
+it regardless of if you use konnichiwa or not). If you do decide to use php-fpm,
+make sure to read the [permissions](#Permissions) section.
+
 ## MySQL Database Schema
 <p align="center">
   <img src="help/schema.svg">
@@ -188,8 +193,8 @@ RoverWire's [virtualhost](https://github.com/RoverWire/virtualhost) script does
 a pretty good job in creating an out-of-the-box usable virtualhost.
 
 ## Permissions
-Make sure your server software (apache/nginx/etc) has the permissions to write
-to the **holy directory**.
+Make sure your server software (apache/nginx/etc) and php-fpm (if using) have
+the permissions to read/write to the **holy directory**.
 For me (on apache), the following steps worked:
 * First of all check if the virtualhost has permissions `Require all Granted`
   for `<Directory /var/www/[VIRTUALHOST]>`.
@@ -219,6 +224,19 @@ export APACHE_RUN_GROUP=your-username-group
   You can check what groups your user is in by running:
 ```
 groups [USER]
+```
+
+For php-fpm to use the same user as your server software, you need to edit the
+file `www.conf` located at `/etc/php/[VERSION]/fpm/pool.d/www.conf`. Look for
+the lines
+```
+user = www-data
+group = www-data
+```
+and edit those to
+```
+user = your-username
+group = your-username-group
 ```
 
 This way, the server will have permissions to read/write to the user directory.
