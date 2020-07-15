@@ -83,7 +83,8 @@ input[type="checkbox"] {
 	display:none;
 }
 input[type="checkbox"] + span:before {
-	font-family: 'FontAwesome';
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
 	cursor: pointer;
 	font-size: 18px;
 	margin-left: 20px;
