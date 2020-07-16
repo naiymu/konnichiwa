@@ -60,8 +60,8 @@ This is needed for the downloading tab.
 
 ### jquery
 I don't want my webpage to connect to a CDN everytime I open it. So download
-the jquery slim local version from
-[here](https://code.jquery.com/jquery-3.5.1.slim.min.js)
+the jquery min (**not slim**) version from
+[here](https://jquery.com/download/)
 and put the `js` file as `scripts/jquery.js`.
 
 But if you don't want to download jquery and are comfortable with connecting to
