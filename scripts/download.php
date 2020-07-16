@@ -140,7 +140,7 @@ fastcgi_finish_request();
 for($i=1; $i<=$pages; $i++) {
 	$imgPath = $directory . "/" . getName($fileName, $i, $extension);
 	$downloadUrl = $imgUrl . $i . $extension;
-	$cmd = "wget -qO '" . $imgPath . "' '" . $downloadUrl . "'";
+	$cmd = "wget -qO " . escapeshellarg($imgPath) . " " . escapeshellarg($downloadUrl);
 	$data = $i . " " . $pages;
 	file_put_contents($progressFile, $data, LOCK_EX);
 	shell_exec($cmd);

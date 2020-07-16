@@ -57,8 +57,9 @@ echo "</div>";
 /*============================================================================*/
 
 /*================================== COVER ===================================*/
-$src = getCover($url);
-$path = $_SERVER['DOCUMENT_ROOT'] . "/tmp/img";
-shell_exec("wget -O '" . $path . "' '" . "$src" . "'");
+$src = escapeshellarg(getCover($url));
+$dir = escapeshellarg($_SERVER['DOCUMENT_ROOT'] . "/tmp");
+$path = escapeshellarg($_SERVER['DOCUMENT_ROOT'] . "/tmp/img");
+shell_exec("mkdir -p $dir && wget -qO $path $src");
 echo "<img class='preview' id='cover' src='/tmp/img'>";
 /*============================================================================*/
