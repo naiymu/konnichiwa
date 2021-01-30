@@ -46,7 +46,7 @@ same.
 To create tables from the sql dump, run the following commands in the mysql
 command line:
 ```
-mysql> CREATE dbname;
+mysql> CREATE DATABASE dbname;
 mysql> USE dbname;
 mysql> SOURCE /path/to/help/create.sql
 ```
