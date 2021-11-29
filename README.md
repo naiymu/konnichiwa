@@ -264,6 +264,6 @@ instance, if the provided name was `ch-1`, the files will be saved as
 `ch-1 {page}.{ext}`.
 
 ## Warning
-This setup is tested only on Ubuntu 18.04 and the site only with firefox.
+This setup is tested only on Ubuntu 18.04, 20.04 and the site only with firefox.
 If it works for you on a different system, consider updating this warning via
 a pull request.
