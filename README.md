@@ -239,6 +239,12 @@ user = your-username
 group = your-username-group
 ```
 
+**Finally**, restart apache and php-fpm services with
+```
+sudo service apache2 restart
+sudo service php[VERSION]-fpm restart
+```
+
 This way, the server will have permissions to read/write to the user directory.
 Be careful if you're going to run some deleting/writing commands with php on
 your server.
