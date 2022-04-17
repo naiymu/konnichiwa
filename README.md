@@ -1,6 +1,12 @@
-<p align="center"><img width="100" src="assets/logo.png"></p>
+<p align="center">
+  <img width="100" src="assets/logo.png">
+  <br>
+  <a href="https://www.codefactor.io/repository/github/naiymu/konnichiwa"><img src="https://www.codefactor.io/repository/github/naiymu/konnichiwa/badge" alt="CodeFactor" /></a>
+</p>
 <h1 align="center">Konnichiwa</h1>
-<p align="center">A Manga and Doujinshi manager that runs on your LAMP server</p>
+<p align="center">
+  A Manga and Doujinshi manager that runs on your LAMP server
+</p>
 
 ## Description
 This is just a personal project since I wanted to learn some PHP and MySQL. And
