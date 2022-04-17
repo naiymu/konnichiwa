@@ -89,7 +89,7 @@ $readingSubdir = false;
 
 $files = scandir($dirPath);
 // Remove all hidden files (files that start with a '.')
-$files = array_filter($files, create_function('$a','return ($a[0]!=".");'));
+$files = array_filter($files, function($a){return ($a[0]!=".");});
 natsort($files);
 foreach ($files as $key => $file) {
 	if(is_dir($dirPath . "/" . $file)){
@@ -106,7 +106,7 @@ if(isset($_GET['subdir']) && $_GET['subdir']) {
 		$dirPath = $dirPath . "/" . $subdir;
 		$files = scandir($dirPath);
 		// Remove all hidden files (files that start with a '.')
-		$files = array_filter($files, create_function('$a','return ($a[0]!=".");'));
+		$files = array_filter($files, function($a){return ($a[0]!=".");});
 		natsort($files);
 	}
 	else {

@@ -53,8 +53,7 @@ if($table !== null) {
 					$data = array(
 						'dir' => $dirId
 					);
-					$serverName = $_SERVER['SERVER_NAME'];
-					$url = "http://" . $serverName . "/info.php?" . http_build_query($data);
+					$url = "info.php?" . http_build_query($data);
 					$htmlDirName = htmlspecialchars($dirName, ENT_QUOTES);
 					//----------------------------------------------------------
 					// Redirect to info page of the added directory
@@ -121,7 +120,6 @@ if($table !== null) {
 			}
 			$connection->close();
 			exit();
-		break;
 
 		case "tags":
 			$tag = trim($_POST['tag']);

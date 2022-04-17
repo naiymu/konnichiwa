@@ -112,7 +112,7 @@ $dirPath = $image_directory . $dirName;
 if(is_dir($dirPath)) {
 	$files = scandir($dirPath);
 	// Remove all hidden files and the . and .. directories
-	$files = array_filter($files, create_function('$a','return ($a[0]!=".");'));
+	$files = array_filter($files, function($a){return ($a[0]!=".");});
 	foreach ($files as $file) {
 		$filePath = $dirPath . "/" . $file;
 		if(is_dir($filePath)) {

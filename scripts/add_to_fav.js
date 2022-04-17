@@ -27,7 +27,7 @@ $(document).ready(function() {
 				$('#message-close').before(php_output);
 				$('#message').fadeIn();
 			},
-			error: function(request, error) {
+			error: function(request) {
 				// Remove the plain text message (if already present) first
 				$('#message').html($('#message').children());
 				$('#message').addClass('msg-error').addClass('row-flex');
@@ -70,7 +70,7 @@ $(document).ready(function() {
 				$('#message-close').before(php_output);
 				$('#message').fadeIn();
 			},
-			error: function(request, error) {
+			error: function(request) {
 				// Remove the plain text message (if already present) first
 				$('#message').html($('#message').children());
 				$('#message').addClass('msg-error').addClass('row-flex');

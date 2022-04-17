@@ -81,7 +81,7 @@ if(isset($_GET['dir'])) {
 		<div class='frame'>
 		<div class='container'>
 		<div class='frame-head'>
-		<a href='$infoUrl'>$htmlDirName</a>
+		<a href='$infoUrl'>$htmlNewDirName</a>
 		<div class='underline active black'></div>
 		</div>
 		<img class='wide-image' src='/assets/bam.gif'>
