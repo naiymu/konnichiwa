@@ -16,10 +16,10 @@ foreach ($directories as $dirObj) {
 	// Removing the true will not work because the addToDB method
 	// in add.php returns error message if it fails
 	if($result === true) {
-		echo "Added: $dirName";
+		echo "Added: $dirName\n";
 	}
 	else {
 		$error = $result['error'];
-		echo "ERRROR: $dirName => $error";
+		echo "ERROR: $dirName => $error\n";
 	}
 }
