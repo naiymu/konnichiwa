@@ -45,7 +45,7 @@ if($rows > 0) {
 	echo "<ul class='list fa-ul'>";
 	while($row = $result->fetch_assoc()) {
 		$dirName = $row['dirName'];
-		$letter = $dirName[0];
+		$letter = strtoupper($dirName[0]);
 		if($letter !== $sectionLetter) {
 			$sectionLetter = $letter;
 			echo "<div class='list-letter'>$sectionLetter</div>";
