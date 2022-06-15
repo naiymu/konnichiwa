@@ -1,7 +1,18 @@
 <?php
 require_once("../add.php");
 
-$json = file_get_contents("data.json");
+$fileName = "data.json";
+
+if(count($argv) > 1) {
+	$fileName = $argv[1];
+}
+
+if(!file_exists($fileName)) {
+	echo "File '$fileName' not found\n";
+	die();
+}
+
+$json = file_get_contents(fileName);
 $data = json_decode($json);
 // The directories in json file
 $directories =  $data->directories;

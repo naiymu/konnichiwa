@@ -182,6 +182,9 @@ structure:
 Run the `scripts/modification/refresh_db.php` file and check the output for any
 errors, which you need to correct manually.
 
+You can also name the file something other than `data.json` and then run the
+script as `php refresh_db.php [FILENAME]`.
+
 ### manual
 You can also add directories completely manually by going to
 `[hostname]/add.php` and filling out the form for each directory. If you have
