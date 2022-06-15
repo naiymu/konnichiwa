@@ -269,6 +269,9 @@ It should be fine if you delete the files or even the whole directory.
 ## Website Features
 The features are pretty much obvious if you are browsing the site. The only
 thing that needs explanation I think is the download tab.<br>
+> ⚠️ Download tab is practically useless now because of Cloudflare on NHentai.
+> You can try using [k-nhentai](https://github.com/naiymu/k-nhentai) instead ⚠️
+
 If you navigate to the **Download** tab in the website, you will be asked for
 an ID and an optional name.
 * **ID**: The nhentai id of a doujinshi that you want to download (the numbers
