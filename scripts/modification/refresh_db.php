@@ -12,7 +12,7 @@ if(!file_exists($fileName)) {
 	die();
 }
 
-$json = file_get_contents(fileName);
+$json = file_get_contents($fileName);
 $data = json_decode($json);
 // The directories in json file
 $directories =  $data->directories;
