@@ -110,7 +110,7 @@ Now put a symlink named `images` in the same directory as `index.php` which
 links to the parent of the **holy directory**.<br>
 So, for instance, if the actual **holy directory** is
 `/home/user/Private/Doujinshi` then you put a symlink `images` which links to
-`/home/user/Private` and **NOT** `/home/adnan/Private/Doujinshi`, which can
+`/home/user/Private` and **NOT** `/home/user/Private/Doujinshi`, which can
 be done by the command (may need sudo)
 ```bash
 cd konnichiwa
